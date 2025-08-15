@@ -4,6 +4,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.7" apply false
     id("org.ec4j.editorconfig") version "0.1.0"
     id("checkstyle")
+    id("com.github.spotbugs") version "6.2.0"
 }
 
 java {
@@ -55,6 +56,7 @@ subprojects {
     tasks.named("check") {
         dependsOn("checkstyleMain")
     }
+
 }
 
 checkstyle {
@@ -67,4 +69,6 @@ checkstyle {
     isIgnoreFailures = false
 }
 
-
+spotbugs {
+    excludeFilter.set(file("${projectDir}/spotbugs-exclude-filter.xml"))
+}
