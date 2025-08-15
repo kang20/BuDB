@@ -17,11 +17,13 @@ allprojects {
     group = "io"
     version = "0.0.1-SNAPSHOT"
     description = "BuDB"
+
+    repositories {
+        mavenCentral()
+    }
 }
 
-repositories {
-    mavenCentral()
-}
+
 
 subprojects {
     apply(plugin = "java")
