@@ -4,10 +4,12 @@ import static java.util.Objects.*;
 
 import java.io.IOException;
 
-public class BudProvider {
+import io.budb.core.port.BudProvider;
+
+public class BudService implements BudProvider {
 	private final BudExecutor executor;
 
-	public BudProvider(BudExecutor executor) {
+	public BudService(BudExecutor executor) {
 		this.executor = requireNonNull(executor);
 	}
 
