@@ -13,6 +13,16 @@ public class BudService implements BudProvider {
 		this.executor = requireNonNull(executor);
 	}
 
+	@Override
+	public void createBucket(String name) throws IOException {
+		executor.createBucket(name);
+	}
+
+	@Override
+	public void deleteBucket(String name) {
+
+	}
+
 	public void save(String key, byte[] value) throws IOException {
 		executor.put(key, value);
 	}
